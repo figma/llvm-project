@@ -627,6 +627,14 @@ def : Joined<["-"], "objcmt-whitelist-dir-path=">, Flags<[CC1Option]>,
 def : Joined<["-"], "objcmt-white-list-dir-path=">, Flags<[CC1Option]>,
   Alias<objcmt_allowlist_dir_path>;
 
+// FIGMA
+def index_store_path : Separate<["-"], "index-store-path">, Flags<[CC1Option, NoArgumentUnused]>;
+def index_ignore_system_symbols : Flag<["-"], "index-ignore-system-symbols">, Flags<[CC1Option, NoArgumentUnused]>;
+def index_record_codegen_name : Flag<["-"], "index-record-codegen-name">, Flags<[CC1Option, NoArgumentUnused]>;
+def index_unit_output_path : Separate<["-"], "index-unit-output-path">, MetaVarName<"<path>">, Flags<[CC1Option, NoArgumentUnused]>;
+def index_ignore_macros : Flag<["-"], "index-ignore-macros">, Flags<[CC1Option, NoArgumentUnused]>;
+// FIGMA
+
 // Make sure all other -ccc- options are rejected.
 def ccc_ : Joined<["-"], "ccc-">, Group<internal_Group>, Flags<[Unsupported]>;
 

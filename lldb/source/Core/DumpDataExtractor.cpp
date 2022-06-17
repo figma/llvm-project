@@ -241,14 +241,14 @@ void DumpFloatingPoint(std::ostringstream &ss, FloatT f) {
   // NaN and Inf are potentially implementation defined and on Darwin it
   // seems NaNs are printed without their sign. Manually implement dumping them
   // here to avoid having to deal with platform differences.
-  if (std::isnan(f)) {
-    if (std::signbit(f))
+  if (isnan(f)) {   // FIGMA
+    if (signbit(f)) // FIGMA
       ss << '-';
     ss << "nan";
     return;
   }
-  if (std::isinf(f)) {
-    if (std::signbit(f))
+  if (isinf(f)) {   // FIGMA
+    if (signbit(f)) // FIGMA
       ss << '-';
     ss << "inf";
     return;
