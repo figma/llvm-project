@@ -2889,6 +2889,7 @@ static void RenderFloatingPointOptions(const ToolChain &TC, const Driver &D,
   if (!JA.isDeviceOffloading(Action::OFK_Cuda) &&
       !JA.isOffloading(Action::OFK_HIP))
     FPContract = "on";
+  /* FIGMA */ FPContract = "off";
   bool StrictFPModel = false;
   StringRef Float16ExcessPrecision = "";
   StringRef BFloat16ExcessPrecision = "";
