@@ -611,4 +611,7 @@
 #include <sanitizer_intercept_overriders.h>
 #endif
 
+// FIGMA
+#define SANITIZER_INTERCEPT_CRYPT_R 0
+
 #endif  // #ifndef SANITIZER_PLATFORM_INTERCEPTORS_H

@@ -152,7 +152,9 @@ typedef struct user_fpregs elf_fpregset_t;
 #include <linux/serial.h>
 #include <sys/msg.h>
 #include <sys/ipc.h>
+#if 0  // FIGMA
 #include <crypt.h>
+#endif
 #endif  // SANITIZER_ANDROID
 
 #include <link.h>
@@ -267,7 +269,9 @@ namespace __sanitizer {
   unsigned struct_ustat_sz = SIZEOF_STRUCT_USTAT;
   unsigned struct_rlimit64_sz = sizeof(struct rlimit64);
   unsigned struct_statvfs64_sz = sizeof(struct statvfs64);
+#if 0 // FIGMA
   unsigned struct_crypt_data_sz = sizeof(struct crypt_data);
+#endif
 #endif // SANITIZER_LINUX && !SANITIZER_ANDROID
 
 #if SANITIZER_LINUX && !SANITIZER_ANDROID
