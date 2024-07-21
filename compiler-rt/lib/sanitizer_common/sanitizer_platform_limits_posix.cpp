@@ -1254,7 +1254,9 @@ CHECK_SIZE_AND_OFFSET(group, gr_passwd);
 CHECK_SIZE_AND_OFFSET(group, gr_gid);
 CHECK_SIZE_AND_OFFSET(group, gr_mem);
 
-#if HAVE_RPC_XDR_H
+// FIGMA - this is a backport of https://github.com/llvm/llvm-project/commit/28800c2e18972935cd4f942aa428c5e6cc4c1670
+// Please remove after we upgrade!
+#if HAVE_RPC_XDR_H && !SANITIZER_MAC
 CHECK_TYPE_SIZE(XDR);
 CHECK_SIZE_AND_OFFSET(XDR, x_op);
 CHECK_SIZE_AND_OFFSET(XDR, x_ops);
