@@ -852,6 +852,10 @@ void SymtabSection::emitObjectFileStab(ObjFile *file) {
   if (ec)
     fatal("failed to get absolute path for " + path);
 
+  SmallString<261> resolvedPath;
+  if (!sys::fs::real_path(path, resolvedPath))
+    path = resolvedPath;
+
   if (!file->archiveName.empty())
     path.append({"(", file->getName(), ")"});
 
