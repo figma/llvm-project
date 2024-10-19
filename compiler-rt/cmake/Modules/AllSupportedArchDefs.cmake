@@ -21,7 +21,7 @@ if(APPLE)
   set(ARM64 arm64)
   set(ARM32 armv7 armv7s armv7k)
   set(ARM64_32 arm64_32)
-  set(X86_64 x86_64 x86_64h)
+  set(X86_64 x86_64h)
 endif()
 
 if(WIN32)
